@@ -848,7 +848,8 @@ AFRAME.registerState({
    */
   computeState: state => {
     state.isPlaying =
-      !state.menuActive && !state.isLoading && !state.isPaused && !state.isVictory &&
+      //!state.menuActive && !state.isLoading && !state.isPaused && !state.isVictory &&
+	  !state.menuActive && !state.isLoading && !state.isVictory &&
       !state.isGameOver && !state.isZipFetching && !state.isSongProcessing &&
       !!state.challenge.id && !state.introActive;
 
