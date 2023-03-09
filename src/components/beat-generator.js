@@ -305,7 +305,7 @@ AFRAME.registerComponent('beat-generator', {
 
     if (data.gameMode === 'ride') {
       beatEl.components.plume.onGenerate(songPosition, horizontalPosition, verticalPosition,
-        this.playerHeight.beatOffset);
+      this.playerHeight.beatOffset);
       beatEl.setAttribute('render-order', renderOrder);
     } else {
       beatEl.components.beat.onGenerate(songPosition, horizontalPosition, verticalPosition,

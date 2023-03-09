@@ -27,6 +27,8 @@ AFRAME.registerComponent('menu-mode', {
       const item = evt.target.closest('[data-mode]');
       const mode = item.dataset.mode;
       const name = item.dataset.name;
+      //  const mode = 0;
+        //const name = "viewer";
       this.el.sceneEl.emit('gamemode', mode, false);
       if (this.data.hasVR) {
         localStorage.setItem('gameMode', name);
