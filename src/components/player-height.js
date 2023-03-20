@@ -20,7 +20,10 @@ AFRAME.registerComponent('player-height', {
     heights.push(this.el.object3D.position.y);
     this.height = median(heights);
       console.log("this height: " + this.height);
-      this.height = 4.6;
+
+      if (!this.data.hasVR) {
+          this.height = 4.6;
+      }
     // Adjust beat container height.
     const height = clamp(this.height, 1.6, 2.2);
     this.beatOffset = remap(height, 1.6, 2.2, 0, 0.2);

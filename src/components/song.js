@@ -204,12 +204,16 @@ AFRAME.registerComponent('song', {
 
   onWallHitStart: function () {
     const gain = this.audioAnalyser.gainNode.gain;
-    //gain.linearRampToValueAtTime(0.1, this.context.currentTime + 0.1);
+      if (this.data.hasVR) {
+          gain.linearRampToValueAtTime(0.1, this.context.currentTime + 0.1);
+      }
   },
 
   onWallHitEnd: function () {
     const gain = this.audioAnalyser.gainNode.gain;
-    //gain.linearRampToValueAtTime(BASE_VOLUME, this.context.currentTime + 0.1);
+      if (this.data.hasVR) {
+          gain.linearRampToValueAtTime(BASE_VOLUME, this.context.currentTime + 0.1);
+      }
   },
 
   startAudio: function () {

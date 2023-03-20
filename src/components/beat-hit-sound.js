@@ -3,7 +3,7 @@ var sourceCreatedCallback;
 const LAYER_BOTTOM = 'bottom';
 const LAYER_MIDDLE = 'middle';
 const LAYER_TOP = 'top';
-const VOLUME = 0.785;
+var VOLUME = 0.785;
 
 /**
  * Beat hit sound using positional audio and audio buffer source.
@@ -25,6 +25,10 @@ AFRAME.registerComponent('beat-hit-sound', {
     this.currentCutDirection = '';
     this.processSound = this.processSound.bind(this);
     sourceCreatedCallback = this.sourceCreatedCallback.bind(this);
+
+      if (this.data.hasVR) {
+          VOLUME = 0.4;
+      }
 
     // Sound pools.
     for (let i = 1; i <= 10; i++) {

@@ -46,7 +46,10 @@ AFRAME.registerComponent('wall', {
     this.backPosition = backPosition;
     this.songPosition = songPosition;
       this.setWallGeometry(songPosition, horizontalPosition, width, length, isCeiling);
-      if (!isCeiling) return;
+
+      if (!this.data.hasVR) {
+          if (!isCeiling) return;
+      }
     el.getObject3D('mesh').material.uniforms.opacity.value = 0;
     el.object3D.position.y = -5;
     el.components.animation__fadein.beginAnimation();
